@@ -3,12 +3,16 @@ const cors = require("cors");
 const dns = require("dns");
 require("dotenv").config();
 const connectDB = require("./config/db");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Routes
+app.use("/api/auth", authRoutes);
 
 // Database Connection
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
