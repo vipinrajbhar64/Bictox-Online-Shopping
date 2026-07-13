@@ -147,6 +147,7 @@ const verifyOTP = async (req, res) => {
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
+    console.log("Email received:", email);
 
     // Check Empty Fields
     if (!email || !password) {
@@ -158,6 +159,7 @@ const loginUser = async (req, res) => {
 
     // Find User
     const user = await User.findOne({ email });
+    console.log("User found:", user);
 
     if (!user) {
       return res.status(404).json({

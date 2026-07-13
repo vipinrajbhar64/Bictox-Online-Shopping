@@ -5,6 +5,7 @@ require("dotenv").config();
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
+const cartRoutes = require("./routes/cartRoutes");
 
 const app = express();
 
@@ -15,12 +16,13 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/cart", cartRoutes);
 
 // Database Connection
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 console.log("DNS Servers:", dns.getServers());
-console.log("Mongo URI:", process.env.MONGO_URI);
+//console.log("Mongo URI:", process.env.MONGO_URI);
 console.log("Node Version:", process.version);
 
 connectDB();

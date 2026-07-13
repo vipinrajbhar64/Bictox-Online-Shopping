@@ -29,6 +29,7 @@ router.post("/verify-otp", verifyOTP);
 
 router.post("/login", loginUser);
 
+
 //══════════════════════════════════
 // Profile Route
 //══════════════════════════════════
