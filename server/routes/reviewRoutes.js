@@ -48,6 +48,6 @@ router.delete(
     "/:id",
     authMiddleware,
     deleteReview
-);
 
+);
 module.exports = router;

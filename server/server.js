@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const cors = require("cors");
 const dns = require("dns");
 require("dotenv").config();
@@ -10,6 +11,8 @@ const orderRoutes = require("./routes/orderRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const addressRoutes = require("./routes/addressRoutes");
 const reviewRoutes = require("./routes/reviewRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
+const uploadRoutes = require("./routes/uploadRoutes");
 
 const app = express();
 
@@ -29,6 +32,14 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/address", addressRoutes);
 app.use("/api/reviews", reviewRoutes);
+app.use("/api/payment", paymentRoutes);
+app.use("/api/upload", uploadRoutes);
+
+app.use(
+    "/uploads",
+    express.static(path.join(__dirname, "uploads"))
+);
+
 
 
 //═════════════════════════════════════

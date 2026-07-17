@@ -100,6 +100,25 @@ const orderSchema = new mongoose.Schema(
         },
 
         //═══════════════════════════════════════════
+        // Razorpay Details
+        //═══════════════════════════════════════════
+
+        razorpayOrderId: {
+            type: String,
+            default: "",
+        },
+
+        razorpayPaymentId: {
+            type: String,
+            default: "",
+        },
+
+        razorpaySignature: {
+            type: String,
+            default: "",
+        },
+
+        //═══════════════════════════════════════════
         // Order Status
         //═══════════════════════════════════════════
 
