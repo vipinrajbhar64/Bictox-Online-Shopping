@@ -240,7 +240,10 @@ const smartSearch = async (req, res) => {
         // Color
         if (filters.color) {
 
-            mongoQuery.color = new RegExp(filters.color, "i");
+            mongoQuery.color = {
+                $regex: `^${filters.color}$`,
+                $options: "i"
+            };
 
         }
 
@@ -248,15 +251,28 @@ const smartSearch = async (req, res) => {
         if (filters.category) {
 
             mongoQuery.$or = [
+
                 {
-                    category: new RegExp(filters.category, "i")
+                    category: {
+                        $regex: `^${filters.category}$`,
+                        $options: "i"
+                    }
                 },
+
                 {
-                    tags: new RegExp(filters.category, "i")
+                    tags: {
+                        $regex: `^${filters.category}$`,
+                        $options: "i"
+                    }
                 },
+
                 {
-                    name: new RegExp(filters.category, "i")
+                    name: {
+                        $regex: filters.category,
+                        $options: "i"
+                    }
                 }
+
             ];
 
         }

@@ -1,11 +1,10 @@
 //═══════════════════════════════════════════════
-// Bictox AI Engine (BAI)
-// Smart Search Parser
+// Bictox AI Smart Search Parser v2
 //═══════════════════════════════════════════════
 
 const parseSearchQuery = (query) => {
 
-    const text = query.toLowerCase();
+    const text = query.toLowerCase().trim();
 
     const filters = {};
 
@@ -26,7 +25,9 @@ const parseSearchQuery = (query) => {
         "yellow"
     ];
 
-    filters.color = colors.find(color => text.includes(color));
+    filters.color = colors.find(color =>
+        text.includes(color)
+    );
 
     //═══════════════════════════════════════════════
     // Budget Detection
@@ -35,25 +36,46 @@ const parseSearchQuery = (query) => {
     const budget = text.match(/\d+/);
 
     if (budget) {
+
         filters.price = Number(budget[0]);
+
     }
 
     //═══════════════════════════════════════════════
     // Category Detection
     //═══════════════════════════════════════════════
 
-    const categories = [
-        "pant",
-        "cargo",
-        "shirt",
-        "tshirt",
-        "jeans",
-        "hoodie"
-    ];
+    const categoryMap = {
 
-    filters.category = categories.find(category =>
-        text.includes(category)
-    );
+        pant: ["pant", "pants"],
+
+        cargo: ["cargo", "cargo pant", "cargo pants"],
+
+        jeans: ["jeans", "jean"],
+
+        shirt: ["shirt", "shirts"],
+
+        tshirt: ["tshirt", "t-shirt", "tee"],
+
+        hoodie: ["hoodie", "hoodies"],
+
+        shoes: ["shoe", "shoes"],
+
+        jacket: ["jacket", "jackets"]
+
+    };
+
+    for (const key in categoryMap) {
+
+        if (categoryMap[key].some(word => text.includes(word))) {
+
+            filters.category = key;
+
+            break;
+
+        }
+
+    }
 
     return filters;
 
