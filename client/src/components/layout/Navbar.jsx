@@ -10,11 +10,22 @@ import MobileMenu from "./MobileMenu";
 import ProfileDropdown from "./ProfileDropdown";
 import CategoriesDropdown from "./CategoriesDropdown";
 import SearchBar from "./SearchBar";
+import { getUser, logout } from "../../utils/auth";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const user = getUser();
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
       <div className="max-w-[1440px] mx-auto h-[88px] flex items-center justify-between px-5 lg:px-8">
@@ -69,27 +80,34 @@ const Navbar = () => {
 
           {/* Wishlist */}
 
-          <button className="p-3 rounded-full hover:bg-gray-100 transition">
+          <Link
+            to="/wishlist"
+            className="p-3 rounded-full hover:bg-gray-100 transition"
+          >
             <FiHeart size={22} />
-          </button>
+          </Link>
 
           {/* Cart */}
 
-          <button className="relative p-3 rounded-full hover:bg-gray-100 transition">
+          <Link
+            to="/cart"
+            className="relative p-3 rounded-full hover:bg-gray-100 transition"
+          >
             <FiShoppingCart size={22} />
 
             <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[11px] px-2 rounded-full">
               0
             </span>
-          </button>
+          </Link>
 
           {/* AI */}
 
-          <button className="hidden lg:flex items-center gap-2 px-12 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 to-teal-600 text-white shadow-lg hover:scale-105 transition-all duration-300">
-            <HiOutlineSparkles size={24} />
-
-            <span className="font-medium">Bictox AI</span>
-          </button>
+          <Link to="/bictox-ai">
+            <button className="hidden lg:flex items-center gap-2 px-12 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 to-teal-600 text-white shadow-lg hover:scale-105 transition-all duration-300">
+              <HiOutlineSparkles size={24} />
+              <span className="font-medium">Bictox AI</span>
+            </button>
+          </Link>
 
           {/* User */}
 
@@ -100,7 +118,10 @@ const Navbar = () => {
             >
               <FiUser size={24} />
             </button>
-            <ProfileDropdown isOpen={isProfileOpen} />
+            <ProfileDropdown
+              isOpen={isProfileOpen}
+              handleLogout={handleLogout}
+            />
           </div>
 
           <button

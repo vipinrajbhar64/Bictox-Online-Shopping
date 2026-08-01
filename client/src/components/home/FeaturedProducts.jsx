@@ -1,24 +1,7 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const FeaturedProducts = () => {
-  const [products, setProducts] = useState([]);
-
-  const fetchProducts = async () => {
-    try {
-      const { data } = await axios.get("http://localhost:5000/api/products");
-
-      if (data.success) {
-        setProducts(data.products);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+const FeaturedProducts = ({ products }) => {
+  const navigate = useNavigate();
 
   return (
     <section className="pt-10 pb-20 bg-white">
@@ -62,7 +45,8 @@ const FeaturedProducts = () => {
             products.map((product) => (
               <div
                 key={product._id}
-                className="bg-white rounded-3xl shadow-md overflow-hidden"
+                onClick={() => navigate(`/product/${product._id}`)}
+                className="bg-white rounded-3xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <img
                   src={`http://localhost:5000${product.image}`}
@@ -78,6 +62,16 @@ const FeaturedProducts = () => {
                   <p className="text-cyan-600 font-bold text-2xl mt-4">
                     ₹{product.price}
                   </p>
+
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/product/${product._id}`);
+                    }}
+                    className="mt-4 w-full py-2.5 rounded-xl bg-cyan-600 text-white font-semibold hover:bg-cyan-700 transition"
+                  >
+                    View Product
+                  </button>
                 </div>
               </div>
             ))
@@ -91,5 +85,4 @@ const FeaturedProducts = () => {
     </section>
   );
 };
-
 export default FeaturedProducts;

@@ -53,9 +53,9 @@ const parseSearchQuery = (query) => {
 
         jeans: ["jeans", "jean"],
 
-        shirt: ["shirt", "shirts"],
-
         tshirt: ["tshirt", "t-shirt", "tee"],
+
+        shirt: ["shirt", "shirts"],
 
         hoodie: ["hoodie", "hoodies"],
 
@@ -64,6 +64,38 @@ const parseSearchQuery = (query) => {
         jacket: ["jacket", "jackets"]
 
     };
+
+    //═══════════════════════════════════════
+    // Tag Detection (Parser V2)
+    //═══════════════════════════════════════
+
+    const tagMap = {
+        oversized: ["oversized", "oversize"],
+        running: ["running", "runner"],
+        formal: ["formal", "office", "business"],
+        casual: ["casual", "daily"],
+        winter: ["winter", "warm"],
+        sports: ["sports", "sport", "gym"],
+        college: ["college"],
+        graphic: ["graphic", "printed"],
+        wideleg: ["wide leg", "wide-leg", "wideleg", "wide"],
+        sneakers: ["sneakers", "sneaker"]
+    };
+
+    for (const key in tagMap) {
+
+        if (tagMap[key].some(word => text.includes(word))) {
+
+            if (key === "wideleg") {
+                filters.tag = "wide leg";
+            } else {
+                filters.tag = key;
+            }
+            break;
+
+        }
+
+    }
 
     for (const key in categoryMap) {
 
@@ -76,6 +108,8 @@ const parseSearchQuery = (query) => {
         }
 
     }
+
+
 
     return filters;
 

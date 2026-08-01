@@ -103,6 +103,15 @@ const MobileMenu = ({ isOpen, onClose }) => {
             <FiPhone size={20} />
             Contact
           </Link>
+
+          <Link
+            to="/register"
+            onClick={onClose}
+            className="flex items-center gap-3 py-4 border-b border-gray-100 hover:text-cyan-600 transition"
+          >
+            <FiUser size={20} />
+            Register
+          </Link>
         </nav>
 
         {/* User */}
@@ -117,20 +126,28 @@ const MobileMenu = ({ isOpen, onClose }) => {
             Cart
           </button>
 
-          <button className="flex items-center gap-3 text-gray-700 hover:text-cyan-600 transition">
+          <Link
+            to="/login"
+            onClick={onClose}
+            className="flex items-center gap-3 text-gray-700 hover:text-cyan-600 transition"
+          >
             <FiUser size={20} />
             Login
-          </button>
+          </Link>
         </div>
 
         {/* Bictox AI Button */}
 
         <div className="px-5 mt-8">
-          <button className="w-full flex items-center justify-center gap-2 px-12 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 to-teal-600 text-white shadow-lg hover:scale-105 transition-all duration-300">
-            <HiOutlineSparkles size={24} />
-
-            <span className="font-medium">Bictox AI</span>
-          </button>
+          <Link to="/bictox-ai">
+            <button
+              onClick={onClose} // agar MobileMenu me onClose prop hai
+              className="w-full flex items-center justify-center gap-2 px-12 py-3.5 rounded-full bg-gradient-to-r from-cyan-500 to-teal-600 text-white shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              <HiOutlineSparkles size={24} />
+              <span className="font-medium">Bictox AI</span>
+            </button>
+          </Link>
         </div>
       </aside>
     </>
