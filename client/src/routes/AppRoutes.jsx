@@ -12,6 +12,11 @@ import Orders from "../pages/Orders/Orders";
 import OrderDetails from "../pages/OrderDetails/OrderDetails";
 import OrderSuccess from "../pages/OrderSuccess/OrderSuccess";
 import BictoxAI from "../pages/Bictox/BictoxAI";
+import About from "../pages/About/About";
+import Categories from "../pages/Categories/Categories";
+import CategoryProducts from "../pages/Categories/CategoryProducts";
+import Contact from "../pages/Contact/Contact";
+import Profile from "../pages/Profile/Profile";
 
 const AppRoutes = () => {
   return (
@@ -61,6 +66,7 @@ const AppRoutes = () => {
             </MainLayout>
           }
         />
+
         <Route
           path="/cart"
           element={
@@ -96,6 +102,7 @@ const AppRoutes = () => {
             </MainLayout>
           }
         />
+
         <Route
           path="/orders/:id"
           element={
@@ -104,6 +111,7 @@ const AppRoutes = () => {
             </MainLayout>
           }
         />
+
         <Route
           path="/order-success"
           element={
@@ -112,11 +120,57 @@ const AppRoutes = () => {
             </MainLayout>
           }
         />
+
         <Route
           path="/bictox-ai"
           element={
             <MainLayout>
               <BictoxAI />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/about"
+          element={
+            <MainLayout>
+              <About />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/categories"
+          element={
+            <MainLayout>
+              <Categories />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/category/:name"
+          element={
+            <MainLayout>
+              <CategoryProducts />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/contact"
+          element={
+            <MainLayout>
+              <Contact />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <MainLayout>
+              <Profile />
             </MainLayout>
           }
         />

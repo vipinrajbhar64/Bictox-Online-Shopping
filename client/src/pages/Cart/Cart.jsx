@@ -33,6 +33,15 @@ const Cart = () => {
   };
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      setCartItems([]);
+      setLoading(false);
+      setError("");
+      return;
+    }
+
     fetchCart();
   }, []);
 

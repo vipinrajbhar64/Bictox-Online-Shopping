@@ -47,7 +47,7 @@ const Product = () => {
       const res = await addToCart(product._id, quantity);
 
       if (res.data.success) {
-        toast.success("Product added to cart successfully 🛒");
+        toast.success("Product added to cart successfully");
       }
     } catch (error) {
       console.log("Add To Cart Error:", error);
@@ -81,7 +81,7 @@ const Product = () => {
       });
 
       if (res.data.success) {
-        toast.success("Review Added ⭐");
+        toast.success("Review Added");
 
         setComment("");
         setRating(5);

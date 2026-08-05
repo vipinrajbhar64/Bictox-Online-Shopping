@@ -1,3 +1,4 @@
+import { FiTruck, FiShield, FiRefreshCw, FiCpu } from "react-icons/fi";
 const WhyChooseBictox = () => {
   return (
     <section className="py-20 bg-gray-50">
@@ -23,7 +24,9 @@ const WhyChooseBictox = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
-            <div className="text-5xl mb-5">🚚</div>
+            <div className="flex justify-center mb-5">
+              <FiTruck size={48} className="text-cyan-600" />
+            </div>
             <h3 className="text-xl font-bold text-gray-900">Fast Delivery</h3>
             <p className="text-gray-500 mt-3">
               Quick and reliable delivery across India.
@@ -31,7 +34,9 @@ const WhyChooseBictox = () => {
           </div>
 
           <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
-            <div className="text-5xl mb-5">🔒</div>
+            <div className="flex justify-center mb-5">
+              <FiShield size={48} className="text-cyan-600" />
+            </div>
             <h3 className="text-xl font-bold text-gray-900">Secure Payment</h3>
             <p className="text-gray-500 mt-3">
               100% safe and encrypted payment gateway.
@@ -39,7 +44,9 @@ const WhyChooseBictox = () => {
           </div>
 
           <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
-            <div className="text-5xl mb-5">↩️</div>
+            <div className="flex justify-center mb-5">
+              <FiRefreshCw size={48} className="text-cyan-600" />
+            </div>
             <h3 className="text-xl font-bold text-gray-900">Easy Returns</h3>
             <p className="text-gray-500 mt-3">
               Hassle-free returns and replacement process.
@@ -47,7 +54,9 @@ const WhyChooseBictox = () => {
           </div>
 
           <div className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
-            <div className="text-5xl mb-5">🤖</div>
+            <div className="flex justify-center mb-5">
+              <FiCpu size={48} className="text-cyan-600" />
+            </div>
             <h3 className="text-xl font-bold text-gray-900">Bictox AI</h3>
             <p className="text-gray-500 mt-3">
               Smart AI assistant to help you shop better.

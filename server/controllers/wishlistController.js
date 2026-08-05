@@ -25,7 +25,7 @@ const addToWishlist = async (req, res) => {
         if (exists) {
             return res.status(400).json({
                 success: false,
-                message: "Product already in wishlist ❤️",
+                message: "Product already in wishlist ",
             });
         }
 
@@ -36,7 +36,7 @@ const addToWishlist = async (req, res) => {
 
         return res.status(201).json({
             success: true,
-            message: "Product added to wishlist ❤️",
+            message: "Product added to wishlist ",
             wishlistItem,
         });
     } catch (error) {

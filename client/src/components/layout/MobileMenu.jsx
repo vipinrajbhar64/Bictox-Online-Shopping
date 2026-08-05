@@ -63,7 +63,7 @@ const MobileMenu = ({ isOpen, onClose }) => {
           </Link>
 
           <Link
-            to="/new"
+            to="/shop"
             onClick={onClose}
             className="flex items-center justify-between py-4 border-b border-gray-100 hover:text-cyan-600 transition"
           >
@@ -116,15 +116,23 @@ const MobileMenu = ({ isOpen, onClose }) => {
 
         {/* User */}
         <div className="px-6 mt-4 space-y-5">
-          <button className="flex items-center gap-3 text-gray-700 hover:text-cyan-600 transition">
+          <Link
+            to="/wishlist"
+            onClick={onClose}
+            className="flex items-center gap-3 text-gray-700 hover:text-cyan-600 transition"
+          >
             <FiHeart size={20} />
             Wishlist
-          </button>
+          </Link>
 
-          <button className="flex items-center gap-3 text-gray-700 hover:text-cyan-600 transition">
+          <Link
+            to="/cart"
+            onClick={onClose}
+            className="flex items-center gap-3 text-gray-700 hover:text-cyan-600 transition"
+          >
             <FiShoppingCart size={20} />
             Cart
-          </button>
+          </Link>
 
           <Link
             to="/login"

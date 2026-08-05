@@ -40,7 +40,7 @@ const Shop = () => {
         {/* Heading */}
         <div className="text-center mb-8">
           <span className="inline-flex px-4 py-2 rounded-full bg-cyan-100 text-cyan-700 text-sm font-semibold">
-            🛍️ Bictox Collection
+            Bictox Collection
           </span>
 
           <h1 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-4">

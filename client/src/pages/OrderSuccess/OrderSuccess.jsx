@@ -8,7 +8,7 @@ const OrderSuccess = () => {
         <FiCheckCircle className="mx-auto text-green-500 mb-5" size={90} />
 
         <h1 className="text-3xl font-bold text-gray-800">
-          Order Placed Successfully 🎉
+          Order Placed Successfully
         </h1>
 
         <p className="text-gray-500 mt-4 leading-7">

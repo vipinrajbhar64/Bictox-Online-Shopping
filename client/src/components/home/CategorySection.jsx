@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const categories = [
   {
     name: "Pants",
@@ -56,9 +58,10 @@ const CategorySection = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-16">
           {categories.map((item, index) => (
-            <div
+            <Link
               key={index}
-              className="group bg-white rounded-3xl border border-gray-100 hover:border-cyan-500 hover:shadow-xl transition-all duration-300 cursor-pointer p-6 text-center"
+              to={`/category/${item.name.toLowerCase()}`}
+              className="group bg-white rounded-3xl border border-gray-100 hover:border-cyan-500 hover:shadow-xl transition-all duration-300 cursor-pointer p-6 text-center block"
             >
               <div className="w-24 h-24 mx-auto rounded-full bg-cyan-50 flex items-center justify-center overflow-hidden group-hover:scale-110 transition duration-300">
                 <img
@@ -73,7 +76,7 @@ const CategorySection = () => {
               <p className="text-sm text-gray-500 mt-2">
                 {item.count} Products
               </p>{" "}
-            </div>
+            </Link>
           ))}
         </div>
       </div>

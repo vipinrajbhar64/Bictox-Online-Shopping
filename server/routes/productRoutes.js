@@ -5,7 +5,9 @@ const router = express.Router();
 const {
     getAllProducts,
     getSingleProduct,
-    smartSearch
+    smartSearch,
+    getProduct,
+    getProductsByCategory,
 } = require("../controllers/productController");
 
 //═══════════════════════════════════════════════
@@ -17,6 +19,8 @@ router.get("/", getAllProducts);
 
 // Smart Search 
 router.get("/search", smartSearch);
+
+router.get("/category/:name", getProductsByCategory);
 
 // Single Product
 router.get("/:id", getSingleProduct);

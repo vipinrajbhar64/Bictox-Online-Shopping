@@ -8,7 +8,7 @@ const recommendationService = async (filters) => {
     if (result.products.length === 0) {
 
         recommendation =
-            "😔 Sorry! No matching products were found.\n\nTry another product, color or increase your budget.";
+            "Sorry! No matching products were found.\n\nTry another product, color or increase your budget.";
 
     } else {
 

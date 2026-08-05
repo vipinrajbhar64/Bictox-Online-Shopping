@@ -316,11 +316,38 @@ const smartSearch = async (req, res) => {
 
 };
 
+//═══════════════════════════════════════════════
+// Product Category
+//═══════════════════════════════════════════════
+
+const getProductsByCategory = async (req, res) => {
+    try {
+        const { name } = req.params;
+
+        const products = await Product.find({
+            category: new RegExp(name, "i"),
+        });
+
+        res.status(200).json({
+            success: true,
+            count: products.length,
+            products,
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message,
+        });
+    }
+};
+
 module.exports = {
     addProduct,
     getAllProducts,
     getSingleProduct,
     updateProduct,
     deleteProduct,
-    smartSearch
+    smartSearch,
+    getProductsByCategory,
 };

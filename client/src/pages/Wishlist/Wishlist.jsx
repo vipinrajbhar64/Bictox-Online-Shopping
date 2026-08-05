@@ -20,6 +20,13 @@ const Wishlist = () => {
   };
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      setWishlist([]);
+      return;
+    }
+
     fetchWishlist();
   }, []);
 
@@ -43,7 +50,7 @@ const Wishlist = () => {
     try {
       await addToCart(productId, 1);
 
-      toast.success("🛒 Added to Cart");
+      toast.success("Added to Cart");
     } catch (err) {
       console.log(err);
 
@@ -66,7 +73,7 @@ const Wishlist = () => {
             <FiHeart className="mx-auto text-gray-300" size={80} />
             <h2 className="text-2xl font-bold mt-5">Wishlist is Empty</h2>
 
-            <p className="text-gray-500 mt-2">Add your favourite products ❤️</p>
+            <p className="text-gray-500 mt-2">Add your favourite products</p>
           </div>
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">

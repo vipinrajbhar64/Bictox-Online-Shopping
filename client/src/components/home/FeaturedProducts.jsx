@@ -8,7 +8,7 @@ const FeaturedProducts = ({ products }) => {
       <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
         <div className="text-center">
           <span className="inline-flex items-center px-5 py-2 rounded-full bg-cyan-100 text-cyan-700 text-sm font-semibold">
-            ✨ Handpicked By Bictox AI
+            Handpicked By Bictox AI
           </span>
 
           <h2 className="mt-5 text-4xl lg:text-5xl font-extrabold text-gray-900">
@@ -22,19 +22,19 @@ const FeaturedProducts = ({ products }) => {
 
         <div className="flex flex-wrap justify-center gap-4 mt-8">
           <span className="px-5 py-2 rounded-full bg-gray-100 hover:bg-cyan-600 hover:text-white transition cursor-pointer">
-            👖 Pants
+            Pants
           </span>
 
           <span className="px-5 py-2 rounded-full bg-gray-100 hover:bg-cyan-600 hover:text-white transition cursor-pointer">
-            👕 T-Shirts
+            T-Shirts
           </span>
 
           <span className="px-5 py-2 rounded-full bg-gray-100 hover:bg-cyan-600 hover:text-white transition cursor-pointer">
-            👟 Shoes
+            Shoes
           </span>
 
           <span className="px-5 py-2 rounded-full bg-gray-100 hover:bg-cyan-600 hover:text-white transition cursor-pointer">
-            🧥 Jackets
+            Jackets
           </span>
         </div>
 

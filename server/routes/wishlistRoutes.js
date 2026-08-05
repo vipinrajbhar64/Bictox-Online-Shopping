@@ -10,13 +10,13 @@ const {
 
 const authMiddleware = require("../middlewares/authMiddleware");
 
-// ❤️ Add To Wishlist
+// Add To Wishlist
 router.post("/add", authMiddleware, addToWishlist);
 
-// ❤️ Get Wishlist
+// Get Wishlist
 router.get("/", authMiddleware, getWishlist);
 
-// ❤️ Remove Wishlist
+// Remove Wishlist
 router.delete("/remove", authMiddleware, removeFromWishlist);
 
 module.exports = router;

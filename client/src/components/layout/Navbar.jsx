@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { FiHeart, FiShoppingCart, FiUser, FiSearch } from "react-icons/fi";
@@ -18,6 +18,21 @@ const Navbar = () => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
 
+  const profileRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setIsProfileOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const navigate = useNavigate();
 
   const user = getUser();
@@ -35,7 +50,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Bictox"
-            className="h-20 lg:h-[68px] w-auto object-contain"
+            className="h-25 lg:h-[95px] w-auto object-contain"
           />
         </Link>
 
@@ -55,10 +70,12 @@ const Navbar = () => {
             onMouseEnter={() => setIsCategoryOpen(true)}
             onMouseLeave={() => setIsCategoryOpen(false)}
           >
-            <button className="hover:text-teal-600 transition font-semibold">
+            <Link
+              to="/categories"
+              className="hover:text-teal-600 transition font-semibold"
+            >
               Categories
-            </button>
-
+            </Link>
             <CategoriesDropdown isOpen={isCategoryOpen} />
           </div>
 
@@ -111,7 +128,7 @@ const Navbar = () => {
 
           {/* User */}
 
-          <div className="relative">
+          <div className="relative" ref={profileRef}>
             <button
               onClick={() => setIsProfileOpen(!isProfileOpen)}
               className="p-3 rounded-full hover:bg-gray-100 transition"

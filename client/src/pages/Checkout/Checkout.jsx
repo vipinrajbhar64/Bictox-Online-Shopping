@@ -9,6 +9,8 @@ import {
   verifyPayment,
 } from "../../services/paymentService";
 
+import { FiLock, FiTruck, FiRefreshCw } from "react-icons/fi";
+
 const Checkout = () => {
   const [address, setAddress] = useState({
     fullName: "",
@@ -100,7 +102,7 @@ const Checkout = () => {
             });
 
             if (verifyRes.data.success) {
-              toast.success("Payment Successful 🎉");
+              toast.success("Payment Successful");
               navigate("/order-success");
             } else {
               toast.error("Payment Verification Failed");
@@ -349,11 +351,20 @@ const Checkout = () => {
               {/* Security */}
 
               <div className="mt-8 bg-cyan-50 rounded-2xl p-5">
-                <p className="text-sm">🔒 Secure Checkout</p>
+                <p className="text-sm flex items-center gap-2">
+                  <FiLock className="text-cyan-600" size={18} />
+                  Secure Checkout
+                </p>
 
-                <p className="text-sm mt-2">🚚 Free Delivery</p>
+                <p className="text-sm mt-2 flex items-center gap-2">
+                  <FiTruck className="text-cyan-600" size={18} />
+                  Free Delivery
+                </p>
 
-                <p className="text-sm mt-2">↩ Easy Return Policy</p>
+                <p className="text-sm mt-2 flex items-center gap-2">
+                  <FiRefreshCw className="text-cyan-600" size={18} />
+                  Easy Return Policy
+                </p>
               </div>
 
               {/* Place Order */}
