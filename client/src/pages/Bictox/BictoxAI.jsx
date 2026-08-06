@@ -64,8 +64,6 @@ const BictoxAI = () => {
 
     // Backend Call
     const response = await askBictoxAI(userMessage);
-    console.log("AI Response:", response);
-    console.log("Recommendation:", response.recommendation);
 
     setMessages((prev) => {
       const updated = [...prev];

@@ -25,7 +25,6 @@ const Cart = () => {
         setCartItems(response.data.cartItems || []);
       }
     } catch (err) {
-      console.log("Cart Error:", err);
       setError(err.response?.data?.message || "Unable to load your cart");
     } finally {
       setLoading(false);

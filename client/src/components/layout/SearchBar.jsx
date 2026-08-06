@@ -47,7 +47,6 @@ const SearchBar = () => {
         setResults([]);
       }
     } catch (error) {
-      console.log("Search Error:", error);
       setResults([]);
     }
   };

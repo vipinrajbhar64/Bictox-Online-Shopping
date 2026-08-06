@@ -1,6 +1,6 @@
 # 🛍️ Bictox Online Shopping
 
-> **Buy It Conveniently Through Online Experience**
+> > ### 🚀 Buy It Conveniently Through Online Experience
 
 Bictox Online Shopping is a modern full-stack AI-powered ecommerce platform built using the MERN stack. It provides a secure shopping experience with authentication, smart product search, wishlist, cart management, Razorpay payment integration, order management, and an intelligent shopping assistant called **Bictox AI**.
 
@@ -57,7 +57,7 @@ The project was developed as a real-world internship-level ecommerce application
 
 ---
 
-## 🤖 Bictox AI Shopping Assistant
+## 🤖 Bictox Online Shopping Assistant
 
 - AI Chat Interface
 - Budget Shopping
