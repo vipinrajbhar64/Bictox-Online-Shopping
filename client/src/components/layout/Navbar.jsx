@@ -7,7 +7,7 @@ import { HiOutlineSparkles } from "react-icons/hi";
 
 import logo from "../../assets/images/logo.png";
 import MobileMenu from "./MobileMenu";
-import ProfileDropdown from "./ProfileDropdown";
+import ProfileDropdown from "./ProfileDropDown";
 import CategoriesDropdown from "./CategoriesDropdown";
 import SearchBar from "./SearchBar";
 import { getUser, logout } from "../../utils/auth";
