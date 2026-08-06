@@ -424,7 +424,7 @@ The following features are planned for the next version:
 
 **Vipin Rajbhar**
 
-B.Tech Computer Science Engineering Student(CSE)
+B.Tech Computer Science Engineering Student
 
 Frontend & Full Stack Web Developer
 
