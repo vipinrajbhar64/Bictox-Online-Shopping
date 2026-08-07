@@ -139,7 +139,7 @@ const Product = () => {
             {/* IMAGE */}
             <div className="flex items-center justify-center bg-gray-100 rounded-xl overflow-hidden">
               <img
-                src={`http://localhost:5000${product.image}`}
+                src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${product.image}`}
                 alt={product.name}
                 className="w-full max-w-[430px] h-[360px] lg:h-[430px] object-cover"
               />

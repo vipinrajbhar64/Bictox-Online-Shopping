@@ -71,7 +71,7 @@ const Shop = () => {
                 {/* Image */}
                 <div className="bg-gray-100 overflow-hidden">
                   <img
-                    src={`http://localhost:5000${product.image}`}
+                    src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${product.image}`}
                     alt={product.name}
                     className="w-full h-[280px] object-cover hover:scale-105 transition duration-500"
                   />

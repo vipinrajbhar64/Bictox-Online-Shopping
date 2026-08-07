@@ -10,7 +10,7 @@ const CategoryProducts = () => {
     const fetchProducts = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/products/category/${name}`,
+          `${import.meta.env.VITE_API_URL}/products/category/${name}`,
         );
 
         const data = await res.json();
@@ -73,7 +73,7 @@ const CategoryProducts = () => {
             {/* Image */}
 
             <img
-              src={`http://localhost:5000${product.image}`}
+              src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${product.image}`}
               alt={product.name}
               className="w-full h-72 object-cover"
             />

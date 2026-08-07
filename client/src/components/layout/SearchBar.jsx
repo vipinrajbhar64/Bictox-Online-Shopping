@@ -94,7 +94,7 @@ const SearchBar = () => {
               >
                 {/* Product Image */}
                 <img
-                  src={`http://localhost:5000${product.image}`}
+                  src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${product.image}`}
                   alt={product.name}
                   className="w-12 h-12 rounded-lg object-cover bg-gray-100"
                 />

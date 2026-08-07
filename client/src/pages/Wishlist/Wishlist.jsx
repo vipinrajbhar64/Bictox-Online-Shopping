@@ -86,7 +86,7 @@ const Wishlist = () => {
                   className="bg-white rounded-3xl shadow-md overflow-hidden"
                 >
                   <img
-                    src={`http://localhost:5000${product.image}`}
+                    src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${product.image}`}
                     alt={product.name}
                     className="w-full h-[300px] object-cover"
                   />

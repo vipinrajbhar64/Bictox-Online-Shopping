@@ -49,7 +49,7 @@ const FeaturedProducts = ({ products }) => {
                 className="bg-white rounded-3xl shadow-md overflow-hidden cursor-pointer hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <img
-                  src={`http://localhost:5000${product.image}`}
+                  src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${product.image}`}
                   alt={product.name}
                   className="w-full h-[320px] object-cover"
                 />

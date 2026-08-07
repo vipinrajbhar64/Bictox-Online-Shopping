@@ -234,7 +234,7 @@ const Checkout = () => {
                 return (
                   <div key={item._id} className="flex gap-4 border-b pb-4">
                     <img
-                      src={`http://localhost:5000${product.image}`}
+                      src={`${import.meta.env.VITE_API_URL.replace("/api", "")}${product.image}`}
                       alt={product.name}
                       className="w-20 h-20 rounded-xl object-cover"
                     />
