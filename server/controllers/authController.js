@@ -27,6 +27,7 @@ const registerUser = async (req, res) => {
       });
     }
 
+
     // Hash Password
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -45,17 +46,21 @@ const registerUser = async (req, res) => {
       otpExpiry,
     });
 
-    await sendEmail(
-      email,
-      "Bictox Email Verification",
-      `Welcome to Bictox!
+    try {
+      await sendEmail(
+        email,
+        "Bictox Email Verification",
+        `Welcome to Bictox!
 
-    Your OTP is: ${otp}
+Your OTP is: ${otp}
 
-    This OTP is valid for 5 minutes.
+This OTP is valid for 5 minutes.
 
-    Do not share this OTP with anyone.`,
-    );
+Do not share this OTP with anyone.`
+      );
+    } catch (err) {
+      console.log("Email Error:", err.message);
+    }
 
     res.status(201).json({
       success: true,
