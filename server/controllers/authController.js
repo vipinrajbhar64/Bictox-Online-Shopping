@@ -46,20 +46,9 @@ const registerUser = async (req, res) => {
       otpExpiry,
     });
     console.log("✅ User Created");
-    console.log("➡ Sending Email...");
-    await sendEmail(
-      email,
-      "Bictox Email Verification",
-      `Welcome to Bictox!
-
-Your OTP is: ${otp}
-
-This OTP is valid for 5 minutes.
-
-Do not share this OTP with anyone.`,
-    );
-    console.log("✅ Email Function Finished");
     console.log("✅ Sending Response to Frontend");
+
+    // Frontend ko turant response bhejo
     res.status(201).json({
       success: true,
       message: "User Registered Successfully",
@@ -69,6 +58,25 @@ Do not share this OTP with anyone.`,
         email: user.email,
       },
     });
+
+    // Email background me bhejo (frontend wait nahi karega)
+    sendEmail(
+      email,
+      "Bictox Email Verification",
+      `Welcome to Bictox!
+
+Your OTP is: ${otp}
+
+This OTP is valid for 5 minutes.
+
+Do not share this OTP with anyone.`
+    )
+      .then(() => {
+        console.log("✅ Email Sent");
+      })
+      .catch((err) => {
+        console.log("❌ Email Error:", err.message);
+      });
   } catch (error) {
     console.log(error);
 
