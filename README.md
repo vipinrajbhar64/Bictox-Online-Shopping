@@ -1,10 +1,24 @@
 # 🛍️ Bictox Online Shopping
 
-> > ### 🚀 Buy It Conveniently Through Online Experience
+> ### 🚀 Buy It Conveniently Through Online Experience
 
 Bictox Online Shopping is a modern full-stack AI-powered ecommerce platform built using the MERN stack. It provides a secure shopping experience with authentication, smart product search, wishlist, cart management, Razorpay payment integration, order management, and an intelligent shopping assistant called **Bictox AI**.
 
 The project was developed as a real-world internship-level ecommerce application with production-oriented architecture, clean UI, responsive design, and secure backend APIs.
+
+---
+
+# 🌐 Live Demo
+
+### 🖥️ Frontend
+
+https://bictox-online-shopping.vercel.app
+
+### ⚙️ Backend API
+
+https://bictox-online-shopping.onrender.com
+
+---
 
 ---
 
@@ -352,7 +366,7 @@ The following features are planned for the next version:
 
 # 📸 Project Screenshots
 
-> Screenshots will be added after deployment.
+> Screenshots of the deployed Bictox Online Shopping application.
 
 ## 🏠 Home Page
 
@@ -392,7 +406,7 @@ The following features are planned for the next version:
 
 ## 🤖 Bictox AI Assistant
 
-![Bictox AI](screenshots/bictox-ai.png)
+![Bictox AI Assistant](screenshots/bictox-ai.png)
 
 ---
 
@@ -410,13 +424,64 @@ The following features are planned for the next version:
 
 ## 📞 Contact Page
 
-![Contact](screenshots/contact.png)
+![Contact Page](screenshots/contact.png)
 
 ---
 
 ## ℹ️ About Page
 
-![About](screenshots/about.png)
+![About Page](screenshots/about.png)
+
+---
+
+# 🚀 Deployment
+
+### Frontend
+
+- Deployed on Vercel
+- Live URL: https://bictox-online-shopping.vercel.app
+
+### Backend
+
+- Deployed on Render
+- API URL: https://bictox-online-shopping.onrender.com
+
+### Database
+
+- MongoDB Atlas
+
+---
+
+# ✅ Version 1.0 Complete
+
+Bictox Online Shopping Version 1.0 is now complete and successfully deployed.
+
+### Version 1.0 Includes
+
+- Full-stack MERN ecommerce application
+- User authentication and email OTP verification
+- Product browsing and categories
+- Product search
+- Wishlist and shopping cart
+- Checkout and order management
+- Razorpay payment integration
+- Bictox AI shopping assistant
+- MongoDB Atlas database
+- Production frontend deployment on Vercel
+- Production backend deployment on Render
+- Responsive and polished UI
+- Project screenshots and complete documentation
+
+### Production Status
+
+**Frontend:** Live ✅  
+**Backend:** Live ✅  
+**Database:** Connected ✅  
+**Payment System:** Working ✅  
+**AI Assistant:** Working ✅  
+**Authentication & OTP:** Working ✅
+
+> 🎉 **Bictox Online Shopping Version 1.0 is officially complete and production-ready.**
 
 ---
 
